@@ -1,5 +1,6 @@
 import { ThemeToggle } from '@/components/theme-toggle/ThemeToggle';
 import { Desktop } from '@/components/desktop/Desktop';
+import { DigitalClock } from '@/components/digital-clock/DigitalClock';
 
 export default function HomePage() {
   return (
@@ -13,6 +14,9 @@ export default function HomePage() {
       </div>
       <div className="w-full h-screen pt-16 ">
         <Desktop>
+          <div className="absolute top-5 right-5">
+            <DigitalClock />
+          </div>
           <div className="absolute bottom-5 right-5 text-xs font-extralight bg-foreground text-background w-fit p-2 pointer-events-none opacity-50">
             This website is still WIP! Come back soon for some tasty updates
           </div>

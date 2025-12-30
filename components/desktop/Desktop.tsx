@@ -81,9 +81,9 @@ export function Desktop({ children }: DesktopProps) {
       ref={desktopRef}
       className="relative w-full h-full min-h-[500px] bg-[radial-gradient(var(--dots)_1px,transparent_1px)] bg-size-[16px_16px] overflow-hidden"
     >
-      <div className="absolute top-0 left-0 p-4 flex flex-col gap-4">
+      <div className="absolute top-0 left-5 p-4 flex flex-col flex-wrap gap-x-10 gap-4 h-full">
         {windows.map((w) => (
-          <DesktopIcon key={w.id} title={w.title} onClick={() => openWindow(w.id)} />
+          <DesktopIcon key={w.id} title={w.title} icon={w.icon} onClick={() => openWindow(w.id)} />
         ))}
       </div>
 

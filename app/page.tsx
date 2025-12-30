@@ -6,7 +6,8 @@ export default function Home() {
   return (
     <div className="flex min-h-screen min-w-screen w-screen h-screen font-mono! items-center justify-center bg-background relative">
       <Dither
-        waveColor={[0.8, 0.5, 0]}
+        //waveColor={[0.8, 0.5, 0]}
+        waveColor={[0.5, 0.5, 0.5]}
         disableAnimation={false}
         enableMouseInteraction={false}
         colorNum={4}

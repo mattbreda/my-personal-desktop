@@ -9,6 +9,7 @@ export interface WindowState {
   y: number;
   isOpen: boolean;
   zIndex: number;
+  icon?: string;
 }
 
 interface WindowProps extends WindowState {
