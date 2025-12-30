@@ -1,5 +1,6 @@
-import TextType from '@/components/text-type/TextType';
 import Image from 'next/image';
+import TextType from '@/components/text-type/TextType';
+import picture from '@/assets/dither_matteo.jpg';
 
 export const AboutMe = () => {
   return (
@@ -18,7 +19,7 @@ export const AboutMe = () => {
       </div>
       <div className="w-1/3 relative h-[250px]">
         <Image
-          src="/dither_matteo.jpg"
+          src={picture}
           alt="Matteo"
           placeholder="blur"
           className="w-full h-full object-cover"
