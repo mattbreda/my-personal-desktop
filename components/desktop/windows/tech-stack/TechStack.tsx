@@ -1,17 +1,27 @@
 'use client';
 import { useState } from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
+import github from '@/assets/github.png';
+import netlify from '@/assets/netlify.png';
+import nextjs from '@/assets/next.png';
+import nodejs from '@/assets/node.png';
+import react from '@/assets/react.png';
+import vuejs from '@/assets/vue.png';
+import redux from '@/assets/redux.png';
+import tailwindcss from '@/assets/tw.png';
+import typescript from '@/assets/ts.png';
+
 const TechCard = ({
-  logoSource,
   name,
   url,
+  image,
   invertOnDark,
 }: {
-  logoSource: string;
   name: string;
   url: string;
+  image: StaticImageData;
   invertOnDark?: boolean;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -26,7 +36,7 @@ const TechCard = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       <Image
-        src={logoSource}
+        src={image}
         alt={name}
         width={80}
         height={80}
@@ -41,67 +51,68 @@ const TechCard = ({
 export const TechStack = () => {
   const stack = [
     {
-      logoSource: '/dither_it_icone-github-noir.png',
       name: 'Github',
       invertOnDark: true,
+      image: github,
       url: 'https://github.com/',
     },
     {
-      logoSource: '/dither_it_netlify-logo-png-transparent.png',
       name: 'Netlify',
       url: 'https://www.netlify.com/',
+      image: netlify,
     },
     {
-      logoSource: '/dither_it_next_js_logo_icon_145038.png',
       name: 'Next.js',
       url: 'https://nextjs.org/',
+      image: nextjs,
       invertOnDark: true,
     },
 
     {
-      logoSource: '/dither_it_Node.js_logo.png',
       name: 'Node.js',
       url: 'https://nodejs.org/',
+      image: nodejs,
       invertOnDark: true,
     },
     {
-      logoSource: '/dither_it_React-icon.png',
       name: 'React',
+      image: react,
       url: 'https://react.dev/',
       invertOnDark: false,
     },
     {
-      logoSource: '/dither_it_Vue.js_Logo_2.png',
       name: 'Vue.js',
       url: 'https://vuejs.org/',
+      image: vuejs,
       invertOnDark: true,
     },
     {
-      logoSource: '/dither_it_Redux.png',
       name: 'Redux',
       url: 'https://redux.js.org/',
+      image: redux,
       invertOnDark: true,
     },
     {
-      logoSource: '/dither_it_Typescript_logo_2020.png',
       name: 'TypeScript',
       url: 'https://www.typescriptlang.org/',
+      image: typescript,
       invertOnDark: true,
     },
     {
-      logoSource: '/dither_it_Tailwind_CSS_Logo.svg.png',
       name: 'Tailwind CSS',
       url: 'https://tailwindcss.com/',
+      image: tailwindcss,
       invertOnDark: false,
     },
   ];
+
   return (
     <div className="p-4 gap-4 w-[50vw] max-w-[580px]">
       <div className="w-full grid grid-cols-3 gap-4 items-center ju">
         {stack.map((tech) => (
           <TechCard
             key={tech.name}
-            logoSource={tech.logoSource}
+            image={tech.image}
             name={tech.name}
             url={tech.url}
             invertOnDark={tech.invertOnDark}
