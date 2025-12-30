@@ -91,8 +91,9 @@ export function Window({
             e.stopPropagation();
             onClose();
           }}
-          className="w-5 h-5 flex items-center justify-center border border-background hover:bg-background hover:text-foreground transition-colors text-xs font-bold"
+          className="cursor-pointer w-5 h-5 flex items-center justify-center border border-background hover:bg-background hover:text-foreground transition-colors text-xs font-bold"
           aria-label="Close window"
+          type="button"
         >
           X
         </button>

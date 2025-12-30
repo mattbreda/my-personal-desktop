@@ -30,6 +30,7 @@ const TechCard = ({
         alt={name}
         width={80}
         height={80}
+        placeholder="blur"
         className={`${invertOnDark ? 'dark:invert' : ''} aspect-square object-contain`}
       />
       <div className="group-hover:text-orange-400">{name}</div>

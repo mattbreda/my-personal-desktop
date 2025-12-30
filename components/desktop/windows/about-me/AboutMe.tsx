@@ -17,7 +17,13 @@ export const AboutMe = () => {
         />
       </div>
       <div className="w-1/3 relative h-[250px]">
-        <Image src="/dither_matteo.jpg" alt="Matteo" className="w-full h-full object-cover" fill />
+        <Image
+          src="/dither_matteo.jpg"
+          alt="Matteo"
+          placeholder="blur"
+          className="w-full h-full object-cover"
+          fill
+        />
       </div>
     </div>
   );
