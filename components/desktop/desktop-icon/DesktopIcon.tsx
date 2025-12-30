@@ -13,7 +13,6 @@ export const DesktopIcon = ({ title, onClick, icon }: DesktopIconProps) => {
       className="flex flex-col items-center gap-1 w-20 group focus:outline-none cursor-pointer"
     >
       <div className="w-16 h-16 flex items-center justify-center transition-colors">
-        {/* Placeholder Icon */}
         {icon ? (
           <Image
             src={'/' + icon}
