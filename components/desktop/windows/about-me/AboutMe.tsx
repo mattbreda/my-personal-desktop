@@ -1,5 +1,5 @@
-import TextType from "@/components/text-type/TextType";
-import Image from "next/image";
+import TextType from '@/components/text-type/TextType';
+import Image from 'next/image';
 
 export const AboutMe = () => {
   return (
@@ -17,12 +17,7 @@ export const AboutMe = () => {
         />
       </div>
       <div className="w-1/3 relative h-[250px]">
-        <Image
-          src="/dither_matteo.jpg"
-          alt="Matteo"
-          className="w-full h-full object-cover"
-          fill
-        />
+        <Image src="/dither_matteo.jpg" alt="Matteo" className="w-full h-full object-cover" fill />
       </div>
     </div>
   );

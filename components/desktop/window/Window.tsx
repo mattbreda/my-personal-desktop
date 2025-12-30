@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 
 export type WindowId = string;
 export interface WindowState {
@@ -57,13 +57,13 @@ export function Window({
     };
 
     if (isDragging) {
-      document.addEventListener("mousemove", handleMouseMove);
-      document.addEventListener("mouseup", handleMouseUp);
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
     }
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
     };
   }, [isDragging, dragOffset, onMove, onDragEnd]);
 
@@ -71,7 +71,7 @@ export function Window({
     <div
       ref={windowRef}
       className={`absolute flex flex-col border-2 border-foreground bg-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] minw-80 min-h-64 ${
-        isDragging ? "transition-none" : "transition-all duration-300 ease-out"
+        isDragging ? 'transition-none' : 'transition-all duration-300 ease-out'
       }`}
       style={{
         left: x,

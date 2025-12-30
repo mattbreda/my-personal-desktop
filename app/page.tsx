@@ -1,6 +1,6 @@
-import { ThemeToggle } from "@/components/theme-toggle/ThemeToggle";
-import { Loader } from "../components/loader/Loader";
-import Dither from "@/components/dither/Dither";
+import { ThemeToggle } from '@/components/theme-toggle/ThemeToggle';
+import { Loader } from '../components/loader/Loader';
+import Dither from '@/components/dither/Dither';
 
 export default function Home() {
   return (

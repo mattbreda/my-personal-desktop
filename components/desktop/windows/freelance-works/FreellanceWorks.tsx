@@ -6,37 +6,37 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/table/Table";
+} from '@/components/table/Table';
 
 const works = [
   {
-    title: "BEA",
-    link: "https://www.beamediacompany.com/",
-    tags: ["CMS", "Next", "Prismic", "TypeScript", "Vercel"],
+    title: 'BEA',
+    link: 'https://www.beamediacompany.com/',
+    tags: ['CMS', 'Next', 'Prismic', 'TypeScript', 'Vercel'],
   },
   {
-    title: "The Syllabus",
-    link: "https://www.the-syllabus.com/",
+    title: 'The Syllabus',
+    link: 'https://www.the-syllabus.com/',
     tags: [
-      "CMS",
-      "Webapp",
-      "Next",
-      "Prismic",
-      "TypeScript",
-      "Vercel",
-      "Elasticsearch",
-      "Media library",
+      'CMS',
+      'Webapp',
+      'Next',
+      'Prismic',
+      'TypeScript',
+      'Vercel',
+      'Elasticsearch',
+      'Media library',
     ],
   },
   {
-    title: "Giulia Faraon",
-    link: "https://giuliafaraon.com/",
-    tags: ["CMS", "Designer", "Nuxt", "Prismic", "Vercel"],
+    title: 'Giulia Faraon',
+    link: 'https://giuliafaraon.com/',
+    tags: ['CMS', 'Designer', 'Nuxt', 'Prismic', 'Vercel'],
   },
   {
-    title: "Edge",
-    link: "https://www.edgemgmt.it/",
-    tags: ["CMS", "Nuxt", "Prismic", "Vercel"],
+    title: 'Edge',
+    link: 'https://www.edgemgmt.it/',
+    tags: ['CMS', 'Nuxt', 'Prismic', 'Vercel'],
   },
 ];
 
@@ -83,11 +83,8 @@ export const FreelanceWorks = () => {
         </TableBody>
       </Table>
       <div className="mt-5 text-sm text-orange-500">
-        For more infos, visit my{" "}
-        <a
-          href="https://www.linkedin.com/in/matteo-breda-80484789/"
-          target="_blank "
-        >
+        For more infos, visit my{' '}
+        <a href="https://www.linkedin.com/in/matteo-breda-80484789/" target="_blank ">
           LinkedIn
         </a>
       </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 
 // Game Constants
 const CANVAS_WIDTH = 600;
@@ -85,23 +85,23 @@ export const SpaceInvaders = () => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.code === "ArrowLeft") gameState.current.keys.ArrowLeft = true;
-      if (e.code === "ArrowRight") gameState.current.keys.ArrowRight = true;
-      if (e.code === "Space") gameState.current.keys.Space = true;
+      if (e.code === 'ArrowLeft') gameState.current.keys.ArrowLeft = true;
+      if (e.code === 'ArrowRight') gameState.current.keys.ArrowRight = true;
+      if (e.code === 'Space') gameState.current.keys.Space = true;
     };
 
     const handleKeyUp = (e: KeyboardEvent) => {
-      if (e.code === "ArrowLeft") gameState.current.keys.ArrowLeft = false;
-      if (e.code === "ArrowRight") gameState.current.keys.ArrowRight = false;
-      if (e.code === "Space") gameState.current.keys.Space = false;
+      if (e.code === 'ArrowLeft') gameState.current.keys.ArrowLeft = false;
+      if (e.code === 'ArrowRight') gameState.current.keys.ArrowRight = false;
+      if (e.code === 'Space') gameState.current.keys.Space = false;
     };
 
-    window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("keyup", handleKeyUp);
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
 
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-      window.removeEventListener("keyup", handleKeyUp);
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
     };
   }, []);
 
@@ -110,7 +110,7 @@ export const SpaceInvaders = () => {
 
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     let animationFrameId: number;
@@ -131,10 +131,7 @@ export const SpaceInvaders = () => {
         state.player.x = Math.max(0, state.player.x - PLAYER_SPEED);
       }
       if (state.keys.ArrowRight) {
-        state.player.x = Math.min(
-          CANVAS_WIDTH - PLAYER_WIDTH,
-          state.player.x + PLAYER_SPEED
-        );
+        state.player.x = Math.min(CANVAS_WIDTH - PLAYER_WIDTH, state.player.x + PLAYER_SPEED);
       }
 
       // Shooting
@@ -151,9 +148,7 @@ export const SpaceInvaders = () => {
 
       // Projectiles Movement
       state.projectiles.forEach((p) => (p.y -= PROJECTILE_SPEED));
-      state.projectiles = state.projectiles.filter(
-        (p) => p.y + p.height > 0 && p.active
-      );
+      state.projectiles = state.projectiles.filter((p) => p.y + p.height > 0 && p.active);
 
       // Invaders Movement
       let hitWall = false;
@@ -211,22 +206,17 @@ export const SpaceInvaders = () => {
 
     const draw = (ctx: CanvasRenderingContext2D) => {
       // Clear Canvas
-      ctx.fillStyle = "black";
+      ctx.fillStyle = 'black';
       ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
       const state = gameState.current;
 
       // Draw Player
-      ctx.fillStyle = "#FFA500";
-      ctx.fillRect(
-        state.player.x,
-        state.player.y,
-        state.player.width,
-        state.player.height
-      );
+      ctx.fillStyle = '#FFA500';
+      ctx.fillRect(state.player.x, state.player.y, state.player.width, state.player.height);
 
       // Draw Projectiles
-      ctx.fillStyle = "white";
+      ctx.fillStyle = 'white';
       state.projectiles.forEach((p) => {
         if (p.active) ctx.fillRect(p.x, p.y, p.width, p.height);
       });
@@ -235,8 +225,7 @@ export const SpaceInvaders = () => {
       state.invaders.forEach((inv) => {
         if (inv.active) {
           // Simple visual difference for rows
-          ctx.fillStyle =
-            inv.type === 0 ? "#ffffff" : inv.type === 1 ? "#7d7d7d" : "#FFA500";
+          ctx.fillStyle = inv.type === 0 ? '#ffffff' : inv.type === 1 ? '#7d7d7d' : '#FFA500';
           ctx.fillRect(inv.x, inv.y, inv.width, inv.height);
         }
       });
@@ -266,22 +255,14 @@ export const SpaceInvaders = () => {
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/70">
             {victory ? (
               <div className="flex flex-col items-center">
-                <h2 className="text-3xl font-bold text-green-500 mb-4">
-                  You Win!
-                </h2>
-                <h4 className="text-md text-white mb-5">
-                  All bugs have been fixed!
-                </h4>
+                <h2 className="text-3xl font-bold text-green-500 mb-4">You Win!</h2>
+                <h4 className="text-md text-white mb-5">All bugs have been fixed!</h4>
               </div>
             ) : gameOver && gameStarted ? (
-              <h2 className="text-3xl font-bold text-red-500 mb-4">
-                Game Over
-              </h2>
+              <h2 className="text-3xl font-bold text-red-500 mb-4">Game Over</h2>
             ) : (
               <div className="flex flex-col items-center">
-                <h2 className="text-3xl font-bold text-white mb-4">
-                  Bug Invaders
-                </h2>
+                <h2 className="text-3xl font-bold text-white mb-4">Bug Invaders</h2>
                 <h4 className="text-md text-white mb-5">
                   Destroy all bugs before they reach production!
                 </h4>
@@ -293,7 +274,7 @@ export const SpaceInvaders = () => {
               className="px-6 py-2 bg-orange-400 hover:bg-orange-300 text-white rounded font-bold cursor-pointer"
               type="button"
             >
-              {gameStarted ? "Play Again" : "Start Game"}
+              {gameStarted ? 'Play Again' : 'Start Game'}
             </button>
           </div>
         )}

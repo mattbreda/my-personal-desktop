@@ -1,5 +1,5 @@
-import { ThemeToggle } from "@/components/theme-toggle/ThemeToggle";
-import { Desktop } from "@/components/desktop/Desktop";
+import { ThemeToggle } from '@/components/theme-toggle/ThemeToggle';
+import { Desktop } from '@/components/desktop/Desktop';
 
 export default function HomePage() {
   return (

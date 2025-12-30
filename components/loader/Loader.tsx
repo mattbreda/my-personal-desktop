@@ -1,6 +1,6 @@
-"use client";
-import { useRouter } from "next/navigation";
-import { useEffect, useState, useRef } from "react";
+'use client';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState, useRef } from 'react';
 //LOADING ASSETS ███▓▒░░░░░░░░░░░░
 
 const TOTAL_BLOCKS = 18;
@@ -10,26 +10,26 @@ export const Loader = () => {
 
   const [progress, setProgress] = useState(0);
   const progressRef = useRef(0);
-  const [currentAsset, setCurrentAsset] = useState("");
+  const [currentAsset, setCurrentAsset] = useState('');
 
   const assets = [
-    "Initializing system...",
-    "Loading core modules...",
-    "Fetching stylesheets...",
-    "Parsing JavaScript bundles...",
-    "Loading web fonts...",
-    "Rendering DOM elements...",
-    "Initializing React components...",
-    "Establishing API connections...",
-    "Loading image assets...",
-    "Compiling SASS modules...",
-    "Hydrating application state...",
-    "Optimizing performance...",
-    "Finalizing render tree...",
-    "Ready to launch...",
+    'Initializing system...',
+    'Loading core modules...',
+    'Fetching stylesheets...',
+    'Parsing JavaScript bundles...',
+    'Loading web fonts...',
+    'Rendering DOM elements...',
+    'Initializing React components...',
+    'Establishing API connections...',
+    'Loading image assets...',
+    'Compiling SASS modules...',
+    'Hydrating application state...',
+    'Optimizing performance...',
+    'Finalizing render tree...',
+    'Ready to launch...',
   ];
 
-  const glyphs = ["░", "▒", "▓", "█"];
+  const glyphs = ['░', '▒', '▓', '█'];
 
   const getGlyph = (index: number): string => {
     const blockProgress = (progress / 100) * TOTAL_BLOCKS;
@@ -44,7 +44,7 @@ export const Loader = () => {
 
   const navigateToHomePage = () => {
     if (progressRef.current >= 100) {
-      router.push("/homepage");
+      router.push('/homepage');
     }
   };
 
@@ -61,20 +61,17 @@ export const Loader = () => {
       setProgress(easedProgress * 100);
       progressRef.current = easedProgress * 100;
 
-      const assetIndex = Math.min(
-        Math.floor(easedProgress * assets.length),
-        assets.length - 1
-      );
+      const assetIndex = Math.min(Math.floor(easedProgress * assets.length), assets.length - 1);
       setCurrentAsset(assets[assetIndex]);
 
       if (linearProgress >= 1) {
         clearInterval(interval);
       }
     }, 50);
-    window.addEventListener("keydown", navigateToHomePage);
+    window.addEventListener('keydown', navigateToHomePage);
 
     return () => {
-      window.removeEventListener("keydown", navigateToHomePage);
+      window.removeEventListener('keydown', navigateToHomePage);
       clearInterval(interval);
     };
   }, []);
@@ -83,18 +80,15 @@ export const Loader = () => {
     <div className="flex flex-col items-center justify-center text-foreground">
       <div className="text-center">
         <div className="font-mono text-4xl tracking-wider mb-4">
-          {Array.from({ length: TOTAL_BLOCKS }, (_, i) => getGlyph(i)).join("")}
+          {Array.from({ length: TOTAL_BLOCKS }, (_, i) => getGlyph(i)).join('')}
         </div>
 
         <div className="font-mono text-xl">
-          LOADING_ASSETS:{" "}
-          {progress < 100 ? `${Math.floor(progress)}%` : "COMPLETE"}
+          LOADING_ASSETS: {progress < 100 ? `${Math.floor(progress)}%` : 'COMPLETE'}
         </div>
 
         {progress < 100 ? (
-          <div className="font-mono text-sm mt-4 h-6">
-            {currentAsset && `> ${currentAsset}`}
-          </div>
+          <div className="font-mono text-sm mt-4 h-6">{currentAsset && `> ${currentAsset}`}</div>
         ) : (
           <button
             onClick={navigateToHomePage}

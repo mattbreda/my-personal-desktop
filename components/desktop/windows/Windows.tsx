@@ -1,16 +1,16 @@
-import Image from "next/image";
-import { WindowState } from "../window/Window";
-import { TechStack } from "./tech-stack/TechStack";
-import TextType from "@/components/text-type/TextType";
-import { AboutMe } from "./about-me/AboutMe";
-import { SpaceInvaders } from "./space-invaders/SpaceInvaders";
-import { FreelanceWorks } from "./freelance-works/FreellanceWorks";
-import { Contacts } from "./contacts/Contacts";
+import Image from 'next/image';
+import { WindowState } from '../window/Window';
+import { TechStack } from './tech-stack/TechStack';
+import TextType from '@/components/text-type/TextType';
+import { AboutMe } from './about-me/AboutMe';
+import { SpaceInvaders } from './space-invaders/SpaceInvaders';
+import { FreelanceWorks } from './freelance-works/FreellanceWorks';
+import { Contacts } from './contacts/Contacts';
 
 export const initialWindowsState: WindowState[] = [
   {
-    id: "welcome",
-    title: "Welcome.txt",
+    id: 'welcome',
+    title: 'Welcome.txt',
     content: (
       <div className="p-4">
         <p>Welcom to my personal desktop environment!</p>
@@ -25,8 +25,8 @@ export const initialWindowsState: WindowState[] = [
     zIndex: 1,
   },
   {
-    id: "about",
-    title: "About_me",
+    id: 'about',
+    title: 'About_me',
     content: <AboutMe />,
     x: 150,
     y: 150,
@@ -34,8 +34,8 @@ export const initialWindowsState: WindowState[] = [
     zIndex: 1,
   },
   {
-    id: "stack",
-    title: "My_Tech_Stack",
+    id: 'stack',
+    title: 'My_Tech_Stack',
     content: <TechStack />,
     x: 200,
     y: 180,
@@ -43,8 +43,8 @@ export const initialWindowsState: WindowState[] = [
     zIndex: 1,
   },
   {
-    id: "space-invaders",
-    title: "Bug_Invaders.exe",
+    id: 'space-invaders',
+    title: 'Bug_Invaders.exe',
     content: <SpaceInvaders />,
     x: 220,
     y: 200,
@@ -52,8 +52,8 @@ export const initialWindowsState: WindowState[] = [
     zIndex: 2,
   },
   {
-    id: "freelance",
-    title: "Freelance_Works",
+    id: 'freelance',
+    title: 'Freelance_Works',
     content: <FreelanceWorks />,
     x: 250,
     y: 300,
@@ -61,8 +61,8 @@ export const initialWindowsState: WindowState[] = [
     zIndex: 2,
   },
   {
-    id: "contact",
-    title: "Contacts",
+    id: 'contact',
+    title: 'Contacts',
     content: <Contacts />,
     x: 300,
     y: 260,

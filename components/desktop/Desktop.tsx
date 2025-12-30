@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState, useRef } from "react";
-import { Window, WindowId, WindowState } from "./window/Window";
-import { DesktopIcon } from "./desktop-icon/DesktopIcon";
-import { initialWindowsState } from "./windows/Windows";
+import { useState, useRef } from 'react';
+import { Window, WindowId, WindowState } from './window/Window';
+import { DesktopIcon } from './desktop-icon/DesktopIcon';
+import { initialWindowsState } from './windows/Windows';
 
 interface DesktopProps {
   children?: React.ReactNode;
@@ -17,17 +17,13 @@ export function Desktop({ children }: DesktopProps) {
 
   const openWindow = (id: WindowId) => {
     setWindows((prev) =>
-      prev.map((w) =>
-        w.id === id ? { ...w, isOpen: true, zIndex: topZIndex + 1 } : w
-      )
+      prev.map((w) => (w.id === id ? { ...w, isOpen: true, zIndex: topZIndex + 1 } : w))
     );
     setTopZIndex((prev) => prev + 1);
   };
 
   const closeWindow = (id: WindowId) => {
-    setWindows((prev) =>
-      prev.map((w) => (w.id === id ? { ...w, isOpen: false } : w))
-    );
+    setWindows((prev) => prev.map((w) => (w.id === id ? { ...w, isOpen: false } : w)));
   };
 
   const bringToFront = (id: WindowId) => {
@@ -37,9 +33,7 @@ export function Desktop({ children }: DesktopProps) {
 
       const newTopZIndex = topZIndex + 1;
       setTopZIndex(newTopZIndex);
-      return prev.map((w) =>
-        w.id === id ? { ...w, zIndex: newTopZIndex } : w
-      );
+      return prev.map((w) => (w.id === id ? { ...w, zIndex: newTopZIndex } : w));
     });
   };
 
@@ -75,8 +69,7 @@ export function Desktop({ children }: DesktopProps) {
         if (newX > desktopWidth - minVisible) newX = desktopWidth - minVisible;
 
         if (newY < 0) newY = 0;
-        if (newY > desktopHeight - minVisible)
-          newY = desktopHeight - minVisible;
+        if (newY > desktopHeight - minVisible) newY = desktopHeight - minVisible;
 
         return { ...w, x: newX, y: newY };
       })
@@ -90,11 +83,7 @@ export function Desktop({ children }: DesktopProps) {
     >
       <div className="absolute top-0 left-0 p-4 flex flex-col gap-4">
         {windows.map((w) => (
-          <DesktopIcon
-            key={w.id}
-            title={w.title}
-            onClick={() => openWindow(w.id)}
-          />
+          <DesktopIcon key={w.id} title={w.title} onClick={() => openWindow(w.id)} />
         ))}
       </div>
 
