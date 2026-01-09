@@ -44,7 +44,7 @@ export const Loader = () => {
   };
 
   const navigateToHomePage = () => {
-    if (progressRef.current >= 100) {
+    if (progressRef.current >= 100 && window.innerWidth > 768) {
       router.push('/homepage');
     }
   };
@@ -94,7 +94,7 @@ export const Loader = () => {
           <button
             onClick={navigateToHomePage}
             type="button"
-            className="font-mono text-sm font-bold text-orange-500 mt-4 h-6 animate-pulse"
+            className="font-mono text-sm font-bold text-orange-500 mt-4 h-6 animate-pulse cursor-pointer"
           >
             [ PRESS ANY KEY OR CLICK HERE TO CONTINUE ]
           </button>
